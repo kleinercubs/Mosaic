@@ -1,10 +1,10 @@
-/* @pjs preload="laDepense.jpg" */
+/* @pjs preload="laDefense.jpg" */
 PImage img;
 float k=1.6;
 
 void setup() 
 {
-  img = loadImage("laDepense.jpg");
+  img = loadImage("laDefense.jpg");
   size(int(img.width*k),int(img.height*k));
   background(0);
   noStroke();
