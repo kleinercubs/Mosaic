@@ -1,21 +1,20 @@
-/*@pjs preload="laDefense.jpg";*/
+/* @pjs preload="laDepense.jpg" */
+PImage img;
+float k=1.6;
 
-PImage b;
-
-void setup()
-{
-  PImage b;
-  size(380,380);
-  b=loadImage("laDefense.jpg");
-  background(b);
-}
-
-void draw()
-{
+void setup() {
+  img = loadImage("laDepense.jpg");
+  size(int(img.width*k),int(img.height*k));
+  background(0);
   noStroke();
-  int x=int(random(0,380)),y=int(random(0,380));
-
-  fill(get(x,y));
-  ellipse(x,y,10,10);
+  ellipseMode(CENTER);
 }
 
+void draw() {
+  for (int i=0;i<1000;i++) {
+    int x=int(random(img.width)),y=int(random(img.height));
+    color c=img.pixels[y*img.width+x];
+    fill(c);
+    ellipse(x*k, y*k,10,10);
+  }
+}
